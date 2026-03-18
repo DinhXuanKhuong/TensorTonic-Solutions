@@ -12,4 +12,4 @@ def expected_value_discrete(x, p):
     if np.allclose(np.sum(p), 1):
         return np.sum(x * p)
     else:
-        raise ValueError
+        raise ValueError("Sum of probability must be 1")
