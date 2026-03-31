@@ -8,13 +8,13 @@ def normalize_3d(v):
     v = np.array(v)
 
     if v.ndim == 1:
-        norm = np.sum(v**2)**0.5
+        norm = np.linalg.norm(v)
         if norm == 0:
             return v
-        v_norm = v / norm
+        v_norm = v / norm 
     else:
-        norm = np.sqrt(np.sum(v**2, axis = 1, keepdims = True))
+        norm = np.linalg.norm(v, axis = 1, keepdims = True)
         norm[norm == 0] = 1
         v_norm = v / norm
-        
     return v_norm
+        
