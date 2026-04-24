@@ -6,8 +6,9 @@ def dot_product(x, y):
     Must return a float.
     """
     # Write code here
+    # pass
     x = np.array(x)
     y = np.array(y)
-    if (len(x) != len(y)):
-        raise ValueError
-    return x @ y 
+    res = np.sum(x * y)
+    return res 
+    
