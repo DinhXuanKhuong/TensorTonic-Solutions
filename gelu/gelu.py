@@ -10,9 +10,9 @@ def gelu(x):
     # Write code here
     # pass
     x = np.array(x)
-    if x.ndim == 0:
-        x = 0.5 * x * (1 + math.erf(x/np.sqrt(2)))
-    else:
-        vec_erf = np.vectorize(math.erf)
-        x = 0.5 * x * (1 + vec_erf(x/np.sqrt(2)))
+    # if x.ndim == 0:
+    #     x = 0.5 * x * (1 + math.erf(x/np.sqrt(2)))
+    # else:
+    vec_erf = np.vectorize(math.erf)
+    x = 0.5 * x * (1 + vec_erf(x/np.sqrt(2)))
     return x
