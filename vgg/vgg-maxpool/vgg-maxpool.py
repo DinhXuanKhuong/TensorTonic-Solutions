@@ -9,14 +9,19 @@ def vgg_maxpool(x: np.ndarray) -> np.ndarray:
 
     H_new, W_new = H // 2, W // 2
 
-    res = np.zeros((N, H_new, W_new, C))
+    # res = np.zeros((N, H_new, W_new, C))
 
-    for n in range(N):
-        for i in range(H_new):
-            for j in range(W_new):
-                for c in range(C):
-                    res[n, i, j, c] = max(x[n, 2 * i, 2 * j, c], x[n, 2*i, 2*j + 1, c], x[n, 2 * i + 1, 2*j, c], x[n, 2*i + 1, 2 * j + 1, c])
+    # for n in range(N):
+    #     for i in range(H_new):
+    #         for j in range(W_new):
+    #             for c in range(C):
+    #                 res[n, i, j, c] = max(x[n, 2 * i, 2 * j, c], x[n, 2*i, 2*j + 1, c], x[n, 2 * i + 1, 2*j, c], x[n, 2*i + 1, 2 * j + 1, c])
 
-    return res
+    x_reshaped = x.reshape(N, H//2, 2, W//2, 2, C)
+
+    # take max over the 2x2 window axes
+    return x_reshaped.max(axis=(2, 4))
+
+    # return res
 
     
