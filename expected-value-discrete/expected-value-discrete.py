@@ -5,11 +5,10 @@ def expected_value_discrete(x, p):
     Returns: float expected value
     """
     # Write code here
-    x = np.array(x)
-    p = np.array(p)
+    x = np.asarray(x)
+    p = np.asarray(p)
 
+    if (not np.isclose(sum(p), 1, 1e-6)) or len(x) != len(p):
+        raise ValueError
     
-    if np.allclose(np.sum(p), 1):
-        return np.sum(x * p)
-    else:
-        raise ValueError("Sum of probability must be 1")
+    return sum (x * p)
