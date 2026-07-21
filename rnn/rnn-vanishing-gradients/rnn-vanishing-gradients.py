@@ -1,0 +1,16 @@
+import numpy as np
+
+def compute_gradient_norm_decay(T: int, W_hh: np.ndarray) -> list:
+    """
+    Simulate gradient norm decay over T time steps.
+    Returns list of gradient norms.
+    """
+    # YOUR CODE HERE
+    # pass
+    grad = []
+    g = 1.0
+    for t in range(T):
+        grad.append(g)
+        g = np.linalg.norm(W_hh, ord = 2) * g 
+    # grad.append(g)
+    return grad
