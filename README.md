@@ -242,6 +242,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Complete VGG Network | Assemble a complete VGG16 forward pass by composing the configured feature extractor with the classifier head. | https://www.tensortonic.com/research/vgg/vgg-full-network |
 | VGG Max Pooling | Implement VGG 2x2 max pooling with stride two while preserving the input batch and channel dimensions. | https://www.tensortonic.com/research/vgg/vgg-maxpool |
 | Position Embedding | Add learned positional embeddings to Vision Transformer patch-token sequences while preserving batch dimensions. | https://www.tensortonic.com/research/vit/vit-position-embedding |
+| Frequent-Word Subsampling | Implement Word2Vec frequent-word subsampling by computing token retention probabilities from corpus frequencies. | https://www.tensortonic.com/research/word2vec/word2vec-subsampling |
 | Vector Addition | Implement bounds-checked pointwise vector addition in CUDA with one thread per output element. | https://www.tensortonic.com/study-plans/cuda-basics/cuda/vector-addition |
 
 View my verified ML profile: [TensorTonic profile](https://www.tensortonic.com/profile/dinhxuankhuong)
